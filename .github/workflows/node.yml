@@ -19,5 +19,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm run install-client
+      - run: npm run install-server
       - run: npm run build-client --prefix client
       - run: npm test
