@@ -8,7 +8,7 @@ jobs:
   build:
     env:
       CI: true
-      MONGO_URL: mongodb://localhost/nasa
+      MONGO_URL: mongodb://127.0.0.1:27017/nasa
     strategy:
       matrix:
         node-version: [18.x, 16.x]
@@ -24,7 +24,6 @@ jobs:
         uses: supercharge/mongodb-github-action@1.8.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
-          mongodb-port: 8000
       - run: npm install
       - run: npm run install-client
       - run: npm run install-server
