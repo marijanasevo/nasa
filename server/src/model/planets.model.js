@@ -35,6 +35,7 @@ function loadPlanetsData() {
         console.log(
           'Habitable planets loaded successfully ' + countPlanetsFound
         );
+        resolve(countPlanetsFound);
       });
   });
 }
